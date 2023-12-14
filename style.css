@@ -1,59 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-*, *::before, *::after {
+body {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   font-size: 22px;
   font-weight: 500;
   color: white;
-}
-body {
   padding: 0;
   margin: 0;
   background: #6c757d;
+  height:100vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.kalkulator {
-  margin: 25px;
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  min-height: 70vh;
-  grid-template-columns: repeat(5, 80px);
-  grid-template-rows: minmax(120px, auto) repeat(5, 80px);
+button{
+    color:white;
+    height:80px;
+    width:90px;
+    background-color:rgba(30,30,30,0.95);
+    border:1px solid gray;
 }
-button {
-  cursor: pointer;
-  border: 1px solid #333533;
-  outline: none;
-  background: #242423;
+
+button:hover{
+    background-color:rgba(30,30,30,0.55);
 }
-button:hover, button:focus {
-  background: rgba(36, 36, 35, .95);
+
+.wynik{
+    height:80px;
+    width:100%;
+    margin:20px 10px 10px 10px;
+    background-color: rgba(30,30,30,0.95);
+    border:2px solid gray;
 }
-.wynik {
-  grid-column: 1 / -1;
-  background-color: #333533;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
-  padding: 20px;
-  word-wrap: break-word;
-  word-break: break-all;
-  box-shadow: 0px 4px 25px -10px rgba(0,0,0,0.75);
+
+.kalkulator{
+    height:520px;
+    width:400px;
+    box-shadow: 5px 5px 5px black;
+    background-color: rgba(30,30,30,0.75);
+    display:flex;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
-.poprzednie-dzialanie {
-  font-size: 16px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, .8)
+.ac{
+    margin-left:10px;
 }
-.aktualne-dzialanie {
-  font-size: 30px;
+
+.dzielenie{
+    margin-right:10px;
 }
-.col-dwa {
-  grid-column: span 2;
+
+.ac, .del, .sqrt{
+    flex-grow: 1;
 }
-.row-dwa {
-  grid-row: span 2;
+
+.potega, .odejmowanie, .dodawanie, .wynik_btn{
+    margin-right:10px;
+}
+
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero{
+    height:80px;
+    flex-grow: 1;
+    background-color:rgba(45,45,45,0.95);
+}
+
+.klik:hover{
+    border:2px solid black;
+}
+
+#one, #four, #seven, #zero{
+    margin-left:10px;
 }
