@@ -55,7 +55,7 @@ button:hover{
     margin-right:10px;
 }
 
-.ac, .del, .sqrt{
+.ac, .del, .mnozenie{
     flex-grow: 1;
 }
 
