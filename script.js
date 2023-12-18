@@ -11,22 +11,36 @@ buttons.forEach(function(btn){
         tablicaZnakow.pop();
         wynik.innerText=tablicaZnakow.join('');
     }else if(el.target.className==='wynik_btn'){
-        let wynikPrzedObliczeniem=wynik.innerText+'=';
+        
         let tablicaDoDzialan=[...wynik.innerText];
         let wynikLiczba;
+        let a;
+        let b;
+
         
-        function funkcjaTworzącaLiczbe(){
-            
-           tablicaDoDzialan.forEach(function(el){
-            while(el!='*' & el!='/' & el!='^' & el!='+' & el!='-'){
-                
+        if(tablicaDoDzialan[0]=='0' || '1' || '2' || '3' || '4' || '5' || '6' || '7' || '8' || '9')
+        {
+            a=parseInt(tablicaDoDzialan[0]);
+            b=parseInt(tablicaDoDzialan[2]);
+            switch(tablicaDoDzialan[1]){
+                case'+': wynikLiczba=a+b;break;
+                case'-': wynikLiczba=a-b;break;
+                case'/': wynikLiczba=a/b;break;
+                case'*': wynikLiczba=a*b;break;
+                case'^': wynikLiczba=Math.pow(a,b);
             }
-        })
-
         }
-        //let iloscRownan=(tablicaDoDzialan.filter(el => el!=='1' & el!=='2' & el!=='3' & el!=='4' & el!=='5' & el!='6' & el!='7' & el!='8' & el!='9' & el!='0')).length;
+        else{
+            wynik.innerText="ERR";
+        }
+        
+        wynik.innerText=a+tablicaDoDzialan[1]+b+'='+wynikLiczba;
 
-        // tutaj wynik dzialania
+        setTimeout(()=>{wynik.innerText=''},3000)
+
+        
+
+        
     }
     else{
         wynik.innerText+=btn.innerText;
