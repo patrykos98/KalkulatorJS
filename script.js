@@ -31,7 +31,7 @@ buttons.forEach(function(btn){
             }
         }
         else{
-            wynik.innerText="ERR";
+            wynik.innerText="ERROR";
         }
         
         wynik.innerText=a+tablicaDoDzialan[1]+b+'='+wynikLiczba;
